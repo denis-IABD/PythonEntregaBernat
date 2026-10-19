@@ -20,6 +20,7 @@ def main():
             case _:
                 print("Tiene que ser un número")
 
-main()
-    
-    
+try :
+    main()
+except KeyboardInterrupt:
+    print("Has parado el programa.")   
