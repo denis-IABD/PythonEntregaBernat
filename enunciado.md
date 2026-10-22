@@ -10,3 +10,5 @@
 
 *En tots els jocs és obligatori tenir un control de que l'usuari introdueixi opcions vàlides.*
 **En tots els jocs és obligatori fer ús de funcions pròpies.**
+
+*Hecho por*: **Denis Coello**
