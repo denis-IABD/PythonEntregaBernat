@@ -1,4 +1,10 @@
 def CrearTablero():
+    """
+    Crear tablero de 3 en raya.
+    Returns:
+    lista (list(list)): lista que guarda las 9 fichas del tablero de 3 en raya.
+    """
+    
     lista = []
     for i in range(3):
         lista2 = ["_"]*3
@@ -6,6 +12,16 @@ def CrearTablero():
     return lista
  
 def PedirNum(x):
+    """
+    Pedir un número y asegurarse que está dentro de los limites de 3.
+    
+    Args:
+    x (str): Palabra que usar para el input.
+    
+    Returns:
+    resultado (int): número valido para usar en la partida.
+    """
+    
     resultado = -1
     while resultado == -1:
         try:      
@@ -19,6 +35,17 @@ def PedirNum(x):
     return resultado    
  
 def Comprobar(tablero, ficha):
+    """
+    Comprobar si hay algún 3 en raya tanto en fila, columna o diagonal.
+    
+    Args:
+    tablero(list(list)): Tablero donde se juega.
+    ficha(str): ficha del turno que se está jugando.
+    
+    Returns:
+    comprobado (bool): Comprobar si se ha hecho 3 en raya o no.
+    """
+    
     fila = False
     diagonal, diagonal2 = 0,0
     comprobado = False
@@ -40,6 +67,9 @@ def Comprobar(tablero, ficha):
     return comprobado
             
 def TresEnRaya():
+    """
+    Función principal donde se crea el tablero y se va jugando al 3 en raya entre 2 jugadores."""
+    
     tablero = CrearTablero()
     turno = 1
     while True:

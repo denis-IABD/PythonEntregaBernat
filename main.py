@@ -2,7 +2,16 @@ from PiedraPapelTijera import piedraPapelTijera
 from Ahorcado import Ahorcado
 from TresEnRaya import TresEnRaya
 from BlackJack import BlackJack
+
+
 def menu():
+    """
+    Función de menú
+    
+    Returns:
+    String: Mensaje que se usará en el menú del programa.
+"""
+    
     return f"""
          Menú: Escoja una opción númerica
             
@@ -12,7 +21,7 @@ def menu():
 4. BlackJack
 5. Salir \n
 """
-
+# Función principal que llama al resto de funciones para hacer funcionar el programa.
 def main():
     while True:
         eleccion = input(menu())
@@ -34,3 +43,4 @@ try :
     main()
 except KeyboardInterrupt:
     print("Has parado el programa.")   
+    
