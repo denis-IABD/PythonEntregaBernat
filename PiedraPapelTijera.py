@@ -32,20 +32,18 @@ def piedraPapelTijera():
     opciones = ["piedra", "papel", "tijera"]
     while puntosRandom < 3 and puntosUser < 3:
         eleccion = input("Escoge entre: piedra, papel, tijera \n").lower()
-        match eleccion:
-            case "piedra" | "papel" | "tijera":
-                elecIA = random.choice(opciones)
-                print(f"IA: {elecIA}")
-                resultado = ppp(eleccion, elecIA)  
-                if resultado == 1:
-                    print("Ganaste")
-                    puntosUser +=1 
-                elif resultado == -1:
-                    print("Perdiste")
-                    puntosRandom +=1  
-                else: 
-                    print("Empate")
-                print(pppPuntos(puntosUser,puntosRandom))  
-            case _:
-                print("Tiene que ser una de las opciones")               
- 
+        if eleccion in opciones:
+            elecIA = random.choice(opciones)
+            print(f"IA: {elecIA}")
+            resultado = ppp(eleccion, elecIA)  
+            if resultado == 1:
+                print("Ganaste")
+                puntosUser +=1 
+            elif resultado == -1:
+                print("Perdiste")
+                puntosRandom +=1  
+            else: 
+                print("Empate")
+            print(pppPuntos(puntosUser,puntosRandom))  
+        else:
+            print("Tiene que ser una de las opciones")

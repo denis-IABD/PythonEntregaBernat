@@ -1,24 +1,34 @@
 from PiedraPapelTijera import piedraPapelTijera
-
-def main():
-    while True:
-        eleccion = input("""
-            Menú: Escoja una opción númerica
+from Ahorcado import Ahorcado
+from TresEnRaya import TresEnRaya
+from BlackJack import BlackJack
+def menu():
+    return f"""
+         Menú: Escoja una opción númerica
             
 1. Piedra papel tijera  
 2. Ahorcado
 3. Tres en raya  
 4. BlackJack
 5. Salir \n
-""")
-        match eleccion:
-            case "1":
-                piedraPapelTijera()
-            case "5":
-                print("Adiós...")
-                break
-            case _:
-                print("Tiene que ser un número")
+"""
+
+def main():
+    while True:
+        eleccion = input(menu())
+        if eleccion == "1":
+            piedraPapelTijera()
+        elif eleccion == "2":
+            Ahorcado()
+        elif eleccion == "3":
+            TresEnRaya()
+        elif eleccion == "4":
+            BlackJack()
+        elif eleccion == "5":
+            print("Adiós...")
+            break
+        else:
+            print("Tiene que ser un número de 1 al 5")
 
 try :
     main()
