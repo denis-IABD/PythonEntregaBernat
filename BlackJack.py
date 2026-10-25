@@ -28,7 +28,6 @@ def calcular_puntos(mano):
     }
     puntos = 0
     ases = 0
-    
     for carta in mano:
         puntos += valores[carta]
         if carta == "A":
@@ -50,21 +49,23 @@ def mostrar_mesa(manoUser, manoIA, oculta):
     oculta (bool) : Indica si solo se muestra la primera carta de la IA o todas.
     
     Returns:
-    str : Mensaje con las manos y puntos actuales.
+    mensaje (str) : Mensaje con las manos y puntos actuales.
     """
     
     puntosUser = calcular_puntos(manoUser)
+    mensaje = ""
     if oculta == True:
-        return f"""
+        mensaje = f"""
 Tus cartas: {', '.join(manoUser)} (Puntos: {puntosUser})
 Carta visible del rival: {manoIA[0]}
 """
     else:
         puntosIA = calcular_puntos(manoIA)
-        return f"""
+        mensaje = f"""
 Tus cartas: {', '.join(manoUser)} (Puntos: {puntosUser})
 Cartas del rival: {', '.join(manoIA)} (Puntos: {puntosIA})
 """
+    return mensaje
 
 def comprobar_ganador(puntosUser, puntosIA):
     """
